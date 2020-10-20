@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.1/build/styles/atom-one-dark.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.1/build/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <title>Shell Workout</title>
+    <style>
+        :root {
+            --bg-color: #f1f6f9;
+            --primary-color: #14274e;
+            --third-color: #9ba4b4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f1f6f9;
+        }
+
+        .title {
+            color: var(--primary-color);
+            text-align: center;
+            padding: 1rem;
+            text-transform: uppercase;
+        }
+
+        .exo {
+            padding: 1rem 2rem;
+            background-color: white;
+            /* box-shadow: 0px 4px 3px black; */
+            margin: 1rem;
+        }
+
+        .exo-title {
+            padding: 1rem 0;
+            text-transform: uppercase;
+        }
+
+        /*exo solutions styles*/
+        .exo-solution {
+            padding: 1rem 2rem;
+            margin: 1rem;
+            background-color: white;
+        }
+
+        .inline-code {
+            background-color: var(--third-color);
+            font-weight: bold;
+            padding: 0 5px;
+        }
+
+        .terminal {
+            background-color: black;
+            color: white;
+            padding: 1px 5px;
+        }
+
+        .commands {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .command-item a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f1f6f9;
+            background-color: black;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Shell Workout</h1>
+    <main>
+        <div class="exo">
+            <h2 class="exo-title">getting started</h2>
+            <div class="exo-text">
+                <p class="command">
+                    open git terminal or better install linux subsystem for windows to have a full linux system terminal
+                    in windows, u can do that easly from the windows store, go to the step 6 in the documentation and
+                    follow, if u have a virtual machine u can use that too.
+                    <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">documentation</a>
+                </p>
+                <p class="command">
+                    navigate to ur Desktop
+                </p>
+                <p class="command">
+                    create a new direcroty and call it "shell"
+                </p>
+                <p class="command">
+                    inside the "shell" dir create 5 directories with the names exo1 ... exo5
+                </p>
+                </>
+
+            </div>
+
+        </div>
+        <div class="exo-solution">
+            <button class="btn btn-secondary mb-4" type="button" data-toggle="collapse" data-target="#exo-start"
+                aria-expanded="false" aria-controls="collapseExample">
+                See Solution
+            </button>
+            <div class="collapse" id="exo-start">
+
+                <p class="command">
+                    u can navigate using the <span class="inline-code">cd</span> command,
+                    and create a new directory using <span class="inline-code">mkdir dirName</span>
+                </p>
+                <p class="command">
+                    to create the 5 dirs inside shell we can use a wild card to create all the files using
+                    one
+                    command
+                    <pre><code class="bash">$ mkdir exo{1..5}</code></pre>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="exo">
+            <h2 class="exo-title">Exo 1</h2>
+            <div class="exo-text">
+                <p class="command">
+                    navigate to the exo1 directory
+                </p>
+                <p class="command">
+                    create a new file and call it main.c <br>
+                    <span class="text-muted">or cpp depend on the compiler u had on ur system, gcc for C and
+                        g++ for
+                        CPP</span>
+                </p>
+                <pre><code class="language-cpp">#include < iostream >
+int main() {
+    std::cout << "CPP because fuck C 🖕"
+    return 0;
+}</code></pre>
+                <p class="command">
+                    open the file in a text editor ( from the terminal ) <br>
+                    <pre><code class="bash">$ code main.c</code></pre>
+                </p>
+                <p class="command">
+                    create a basic app that print a custom message
+                </p>
+                <p class="command">
+                    save ur work and close vs code, next compile the app from the terminal and run it.
+                </p>
+                </>
+
+            </div>
+        </div>
+
+        <div class="exo">
+            <h2 class="exo-title">Exo 2</h2>
+            <p class="exo-text">
+                <p class="command">
+                    this time we going to use <span class="inline-code">redirection operatours</span>
+                    , meaning instead of printing the app message in the terminal we going to send it to a
+                    new
+                    text
+                    file.
+                    this is very usefull when a command print a huge amount of data or when ur app need an
+                    outside
+                    data.
+                </p>
+                <p class="command">
+                    navigate to the exo2 directory. <br>
+                    type this in ur terminal <br>
+                    <pre><code class="bash">$ echo "write into a text file" > test.txt</code></pre>
+
+                </p>
+                <p class="command">
+                    type <span class="inline-code">ls</span> and u will see a new file calld test.txt
+                </p>
+                <p class="command">
+                    u can print the data inside the test file using the <span class="inline-code">cat<span />
+                        command.
+                        <pre><code class="bash">$ cat test.txt
+write into a text file</code></pre>
+                </p>
+                <p class="command">
+                    there is 4 types of rederiction operations in the shell <br>
+                    The <span class="inline-code">></span> symbol is used for output (STDOUT) redirection.
+                    <br>
+                    The <span class="inline-code">>></span> is to append data, for example we can append a
+                    new
+                    line
+                    to
+                    the test.txt like this:
+                    <pre><code class="bash">$ echo "new line" >> test.txt</code></pre>
+                </p>
+            </p>
+            <hr>
+            <p class="command">
+                navigate back to the exo 1 directory and run ur app but this time append this to the command
+                <div class="terminal">
+
+                </div>
+                <pre><code class="bash">$ main > result.txt</code></pre>
+            </p>
+            <p class="command">
+                now use the <span class="inline-code">ls</span> command in the directory that contains ur
+                app
+                and u
+                will see new file.
+                <pre><code class="bash">$ ls<br>main.c main result.txt</code></pre>
+            </p>
+            <p class="command">
+                print the data inside result.txt to the screen
+            </p>
+
+
+        </div>
+
+        <div class="exo">
+            <h2 class="exo-title">Exo 3</h2>
+            <div class="exo-text">
+                <p class="command">
+                    navigate to the exo 3 directory <br>
+                    this time we going to redirect data from a file to our app using cpp or c args
+                </p>
+                <p class="command">
+                    let start by creating the app
+                    <pre><code class="bash">$ touch main.cpp; code .</code></pre>
+                    this command will create the file and open the current dir in vs code, u can append commands using a
+                    <span class="inline-code">;</span>
+                </p>
+                <p class="command">
+                    no suppose we have this test.txt file, and we want to extract all programming languages inside it.
+                    <br>
+                    create a test.txt file and copy the records to it.
+                </p>
+                <pre><code class="text">1,cpp,low level
+2,csharp,entreprise apps
+3,javascript,browser interactions
+4,haskell,math
+5,html,you are not a programming language fuck off</code></pre>
+                <p class="command">first lets create our algorithme to extract all data <br>
+                    copy or create ur own.
+                </p>
+                <pre><code class="cpp">include < iostream >
+using namespace std;
+int main (int argc, char** argv) {
+    //variables declaration
+    size_t pos = 0;
+    string del = ",";
+    string token;
+    //I used vectors to stock the data ( vectors are like arrays but they are dynamic u can add to them automaticly)
+    vector < string > tokens;
+    //this is a vector of vector
+    vector < vector < string > > data;
+    for (string line; getline(cin, line);) {
+        while ((pos = line.find(del)) != std::string::npos) {
+            tokens.push_back(line.substr(0, pos));
+            line.erase(0, pos + del.length());
+        }
+        tokens.push_back(line.substr(0, pos));
+        data.push_back(tokens);
+        tokens.clear();
+    }
+    //printing the data on the stdout 
+    for (size_t i = 0; i < data.size(); i++) { 
+        cout << data[i][1] << endl; 
+    }
+    //in c or cpp we should always return 0 from the main this allow us to know from the terminal if the app exec correctly
+    return 0;
+}</code></pre>
+
+                <p class="command">
+                    now we can run this app like this to throw the data from the test file inside the app
+                </p>
+                <pre><code class="bash">$ g++ -o main main.cpp
+$ ./main < test.txt
+cpp
+csharp
+javascript
+haskell
+html</code></pre>
+                <p class="command">
+                    we can even redirect the new data and put it into an other file like this
+                </p>
+                <pre><code class="bash">$ ./main < test.txt > output.txt</test.txt></code></pre>
+                <p class="command">this will create a new file with the name output.txt and put the new data in it</p>
+                <p class="command">
+                    there is a lot of redirection operatours and operations, but those are the must important one, u can
+                    find out more here <a
+                        href="https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection">More
+                        resources</a>
+                </p>
+            </div>
+        </div>
+        <div class="exo">
+            <h2 class="exo-title">Exo 4</h2>
+            <p>let's take a look at two scripts we going to pull the scripts using <span class="inline-code">wget</span>
+                command</p>
+            <p>link to pull: <a
+                    href="https://raw.githubusercontent.com/idrissAbbou/htmlBasic/master/htmlBasic">HtmlBasic</a></p>
+            <pre><code class="bash">$ wegt -o "link"</code></pre>
+            <p>open the file in a text editor, u will see a bash code or what is called a shell script, shell script is
+                nothing but a bunch of commands wroten like a programming language</p>
+            <p> those are the must important commands in linux: <a
+                    href="https://www.howtogeek.com/412055/37-important-linux-commands-you-should-know/">Linux 37
+                    Important command</a></p>
+            <p>to know more about shell scripting go to this book: <a class="btn btn-secondary"
+                    href="https://drive.google.com/file/d/1zm8VLVUyJxuVskWfaYEqkxdEcbHuZ8x1/view?usp=sharing">Linux
+                    Shell Scripting</a> or <a class="btn btn-secondary"
+                    href="https://drive.google.com/file/d/1dmFH9ndlorNeeijMIRBMfitwttIHrF8m/view?usp=sharing">Linux
+                    Command Line and Shell Scripting Bible</a>
+            </p>
+        </div>
+    </main>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+</script>
+
+
+</html>
